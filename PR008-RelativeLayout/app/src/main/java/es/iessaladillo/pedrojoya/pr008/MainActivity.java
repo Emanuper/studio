@@ -1,6 +1,5 @@
 package es.iessaladillo.pedrojoya.pr008;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -25,17 +24,15 @@ public class MainActivity extends AppCompatActivity implements
     private TextView lblUsuario;
     private TextView lblClave;
 
-    // Al crear la actividad.
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Se obtienen e inicializan las vistas.
-        getVistas();
+        initVistas();
     }
 
     // Obtiene e inicializa las vistas.
-    private void getVistas() {
+    private void initVistas() {
         btnAceptar = (Button) findViewById(R.id.btnAceptar);
         if (btnAceptar != null) {
             btnAceptar.setOnClickListener(this);
@@ -167,10 +164,8 @@ public class MainActivity extends AppCompatActivity implements
     private void setColorSegunFoco(TextView lbl, boolean hasFocus) {
         if (hasFocus) {
             lbl.setTextColor(ContextCompat.getColor(this, R.color.accent));
-            lbl.setTypeface(Typeface.DEFAULT_BOLD);
         } else {
-            lbl.setTextColor(ContextCompat.getColor(this, R.color.primary));
-            lbl.setTypeface(Typeface.DEFAULT);
+            lbl.setTextColor(ContextCompat.getColor(this, R.color.secundary_text));
         }
     }
 

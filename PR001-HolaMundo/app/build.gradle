@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
-def support_library_version = "24.2.0"
+def support_library_version = "24.2.1"
+def constraint_layout_version = "1.0.0-alpha8"
 
 android {
     compileSdkVersion 24
@@ -16,7 +17,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
@@ -25,4 +26,5 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "com.android.support:appcompat-v7:${support_library_version}"
+    compile "com.android.support.constraint:constraint-layout:${constraint_layout_version}"
 }
